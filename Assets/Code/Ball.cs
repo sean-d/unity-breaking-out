@@ -7,7 +7,7 @@ public class Ball : MonoBehaviour
     // Config Stuff
     // We will create a paddle instance from the main paddle class called mainPaddle. This way we can have additional paddles if we want. 
     [SerializeField] Paddle mainPaddle;
-    
+
     // State Stuff
     // paddleToBallVector used to determine and inform distance between the paddle and the ball.
     Vector2 paddleToBallVector;
@@ -42,7 +42,7 @@ public class Ball : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             started = true;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 10f);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 20f);
         }
     }
 }
