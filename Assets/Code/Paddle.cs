@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
-    [SerializeField] float screenWidthUnits = 16f;
-    private float minPaddleXPos = 0f;
-    private float maxPaddleXPos = 16f;
+
+    // Configuration Stuff
+    // screenWidthUnits: how wide the screen is in unity units. Aspect ratio is 4:3. The camera is size 6 which makes the screen 12 tall. in 4:3, the width becomes 16.
+    // minPaddleX: the farthest to the left the paddle can move. Set to 1 so it touches the side.
+    // maxPaddleX: the farthest to the right the paddle can move. Set to 15 so it touches the side.
+    private float screenWidthUnits = 16.0f;
+    private float minPaddleXPos = 0.86f;
+    private float maxPaddleXPos = 15.15f;
 
     // Start is called before the first frame update
     void Start()
