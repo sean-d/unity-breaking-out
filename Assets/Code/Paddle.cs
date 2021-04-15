@@ -29,7 +29,7 @@ public class Paddle : MonoBehaviour
         // create a new paddle position vector2 object that has the current x/y of the paddle
         // update the x coord of the paddle with current X position in step 1 and only allow it to be 0->16 so it does not go off-screen
         float currentXPos = Input.mousePosition.x / Screen.width * screenWidthUnits;
-        Vector2 PaddlePos = new Vector2(Input.mousePosition.x, transform.position.y);
+        Vector2 PaddlePos = new Vector2(transform.position.x, transform.position.y);
         PaddlePos.x = Mathf.Clamp(GetXPos(), minPaddleXPos, maxPaddleXPos);
         transform.position = PaddlePos;
     }
@@ -41,7 +41,7 @@ public class Paddle : MonoBehaviour
             return ball.transform.position.x;
         }
         else{
-            return Input.mousePosition.x;
+            return Input.mousePosition.x / Screen.width * screenWidthUnits;
         }
     }
 }

@@ -8,7 +8,7 @@ public class GameStatus : MonoBehaviour
     [Range(.1f,10f)] [SerializeField] float gameSpeed = 1.0f;
     [SerializeField] int currentScore = 0;
     [SerializeField] TextMeshProUGUI scoreText;
-    [SerializeField] bool isAutoPlayEnabled;
+    [SerializeField] bool isAutoPlayEnabled = false;
 
     private void Awake() 
     {
@@ -26,6 +26,7 @@ public class GameStatus : MonoBehaviour
     private void Start() 
     {
         scoreText.text = currentScore.ToString();
+        Debug.Log(isAutoPlayEnabled);
     }
     // Update is called once per frame
     void Update()
@@ -51,6 +52,6 @@ public class GameStatus : MonoBehaviour
 
     public bool IsAutoPlayEnabled()
     {
-        return isActiveAndEnabled;
+        return isAutoPlayEnabled;
     }
 }
