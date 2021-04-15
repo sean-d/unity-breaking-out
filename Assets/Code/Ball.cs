@@ -11,6 +11,7 @@ public class Ball : MonoBehaviour
     // State Stuff
     // paddleToBallVector used to determine and inform distance between the paddle and the ball.
     Vector2 paddleToBallVector;
+    Rigidbody2D myRigidBody2D;
     bool started = false;
 
     // Start is called before the first frame update
@@ -18,6 +19,7 @@ public class Ball : MonoBehaviour
     {
         // difference between the ball and the paddle transforms will yield a vector2.
         paddleToBallVector = transform.position - mainPaddle.transform.position;
+        myRigidBody2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -42,7 +44,17 @@ public class Ball : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             started = true;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 8f);
+            myRigidBody2D.velocity = new Vector2(0f, 8f);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+
+        Vector2 TempVector = new Vector2(0.1f, .1f);
+        if (started)
+        {
+            myRigidBody2D.velocity += TempVector;
         }
     }
 }

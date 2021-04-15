@@ -12,11 +12,14 @@ public class Paddle : MonoBehaviour
     private float screenWidthUnits = 16.0f;
     private float minPaddleXPos = 0.86f;
     private float maxPaddleXPos = 15.15f;
+    [SerializeField] Ball ball;
+    GameStatus currentGame;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentGame = FindObjectOfType<GameStatus>();
+        ball = FindObjectOfType<Ball>();
     }
 
     // Update is called once per frame
@@ -27,7 +30,18 @@ public class Paddle : MonoBehaviour
         // update the x coord of the paddle with current X position in step 1 and only allow it to be 0->16 so it does not go off-screen
         float currentXPos = Input.mousePosition.x / Screen.width * screenWidthUnits;
         Vector2 PaddlePos = new Vector2(Input.mousePosition.x, transform.position.y);
-        PaddlePos.x = Mathf.Clamp(currentXPos, minPaddleXPos, maxPaddleXPos);
+        PaddlePos.x = Mathf.Clamp(GetXPos(), minPaddleXPos, maxPaddleXPos);
         transform.position = PaddlePos;
+    }
+
+    private float GetXPos()
+    {
+        if (currentGame.IsAutoPlayEnabled())
+        {
+            return ball.transform.position.x;
+        }
+        else{
+            return Input.mousePosition.x;
+        }
     }
 }

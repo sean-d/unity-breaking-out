@@ -13,9 +13,9 @@ public class LevelMgmt : MonoBehaviour
     {
         sceneLoader = FindObjectOfType<SceneLoader>();
     }
-    public void StartingNumberBreakableBlocks()
+    public void StartingNumberOfBlocks()
     {
-        breakableBlocks++;
+            breakableBlocks++;
     }
 
     public void CountBrokenBlock()
