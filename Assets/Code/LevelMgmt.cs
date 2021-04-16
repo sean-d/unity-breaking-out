@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelMgmt : MonoBehaviour
 {
-    // debug is why this is here
+
     [SerializeField] int breakableBlocks;
     SceneLoader sceneLoader;
 

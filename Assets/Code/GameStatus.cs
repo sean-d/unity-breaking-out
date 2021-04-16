@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameStatus : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class GameStatus : MonoBehaviour
     [SerializeField] int currentScore = 0;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] bool isAutoPlayEnabled = false;
-
     private void Awake() 
     {
         int gameStatusCount = FindObjectsOfType<GameStatus>().Length;
@@ -26,7 +26,6 @@ public class GameStatus : MonoBehaviour
     private void Start() 
     {
         scoreText.text = currentScore.ToString();
-        Debug.Log(isAutoPlayEnabled);
     }
     // Update is called once per frame
     void Update()
@@ -54,4 +53,7 @@ public class GameStatus : MonoBehaviour
     {
         return isAutoPlayEnabled;
     }
+
+
+
 }
