@@ -36,7 +36,6 @@ public class Block : MonoBehaviour
             if (timesHit == maxHits)
             {
                 DestroyBlock();
-                IncreaseScore(); 
             }
             else 
             {
@@ -59,11 +58,6 @@ public class Block : MonoBehaviour
 
         Destroy(gameObject);
         level.CountBrokenBlock();
-    }
-
-    private void IncreaseScore()
-    {
-        game.IncreaseScore();
     }
 
 }

@@ -21,14 +21,8 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
-    public void LoadLevelOne()
-    {
-        SceneManager.LoadScene(1);
-    }
-
     public void LoadStartScene()
     {
-        FindObjectOfType<GameStatus>().ResetGameStatus();
         SceneManager.LoadScene(0);
     }
 

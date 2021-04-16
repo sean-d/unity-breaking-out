@@ -497,6 +497,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4332184614815436718, guid: 3b275e4c6e7bbf0d98ba9048e47f0560, type: 3}
+      propertyPath: gameSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332184614815436718, guid: 3b275e4c6e7bbf0d98ba9048e47f0560, type: 3}
+      propertyPath: isAutoPlayEnabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4332184614815436719, guid: 3b275e4c6e7bbf0d98ba9048e47f0560, type: 3}
       propertyPath: m_RootOrder
       value: 7
